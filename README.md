@@ -11,17 +11,19 @@
 The recommended commit style is shown as follows:
 
 ```
-[<type>](<scope>): <subject>  # This line is called as HEADER
+<jira-issue-key> [<type>](<scope>) <subject>  # This line is called as HEADER
 # Blank line
 <body>
 # Blank line
 <footer>
 ```
 
+The field `<jira-issue-key>` is used to link the commit to existing jira issue board. For instance: `MGAF-1`
+
 The field `<type>` is used to describe the type of the commit, and only the listed tags are allowed:
 
 > - `feat`: new features
-> - `fix`: bugfixs
+> - `fix`: bug-fixes
 > - `docs`: documentations
 > - `style`: formatting (changes that does not affect the functionality of the code)
 > - `refactor`: refactoring（changes that does not add new features nor bug-fixes）
@@ -37,6 +39,12 @@ The field `<type>` is used to describe the type of the commit, and only the list
 
 `<footer>`(optional)
 
+**Example:**
+
+```
+MGAF-1 [chore] Link repo to jira
+```
+
 ## Related Resources
 
-Project Kanban: https://github.com/users/NatsumeRyuhane/projects/1
+Project Kanban: https://hexinyirona.atlassian.net/jira/software/projects/MGAF/issues/
