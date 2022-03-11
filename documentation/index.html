@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>MGAF</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+
+    <body>
+        <script src="./js/jQuery-3.6.0.js"></script>
+
+        <nav id="top-nav-bar">
+            <div id="logo">MGAF</div>
+            <div id="tnb-placeholder-text">Development Frontend Demo</div>
+        </nav>
+
+        <div id="body-region">
+            <div id="side-nav-bar">
+                <div id="side-nav">
+                    <div>Latest Posts</div>
+                    <div>Offers Overview</div>
+                    <div>Notifications</div>
+                    <div>Account Management</div>
+                </div>
+
+                <div id="login-display">
+                    <p>Logged in as <strong><u>User#999</u></strong></p>
+                </div>
+            </div>
+
+            <div id="content-main">
+                <div class="user-post">
+                    <div class="post-user-info">User#001</div>
+                    <div class="post-content">Post Content 1</div>
+                    <div class="post-like-count">20 people liked this.</div>
+                </div>
+
+                <div class="user-post">
+                    <div class="post-user-info">User#001</div>
+                    <div class="post-content">Post Content 2</div>
+                    <div class="post-like-count">15 people liked this.</div>
+                </div>
+
+                <div class="user-post">
+                    <div class="post-user-info">User#012</div>
+                    <div class="post-content">Post Content 3</div>
+                    <div class="post-like-count">32 people liked this.</div>
+                </div>
+
+                <div class="user-post">
+                    <div class="post-user-info">User#012</div>
+                    <div class="post-content">Post Content 4</div>
+                    <div class="post-like-count">32 people liked this.</div>
+                </div>
+
+                <div class="user-post">
+                    <div class="post-user-info">User#012</div>
+                    <div class="post-content">Post Content 5</div>
+                    <div class="post-like-count">32 people liked this.</div>
+                </div>
+
+                <div class="user-post">
+                    <div class="post-user-info">User#012</div>
+                    <div class="post-content">Post Content 6</div>
+                    <div class="post-like-count">32 people liked this.</div>
+                </div>
+
+                <div class="user-post">
+                    <div class="post-user-info">User#012</div>
+                    <div class="post-content">Post Content 7</div>
+                    <div class="post-like-count">32 people liked this.</div>
+                </div>
+
+                <div class="user-post">
+                    <div class="post-user-info">User#012</div>
+                    <div class="post-content">Post Content 8</div>
+                    <div class="post-like-count">32 people liked this.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="btn-new-post">
+            <p id="btn-new-post-icon">+</p>
+            <p id="btn-new-post-text">New Post</p>
+
+            <script>
+                $(document).ready(function(){
+                    $("#btn-new-post").click(function(){
+                        window.activeSubWindow = $("#mask-grayout-fullpage");
+                        activeSubWindow.fadeToggle(500);
+                        $("#post-creation-menu").fadeToggle(500);
+                    });
+                });
+            </script>
+        </div>
+
+        <div id="mask-grayout-fullpage">
+            <script>
+                $(document).ready(function(){
+                    $("#mask-grayout-fullpage").click(function(){
+                        window.activeSubWindow.fadeToggle(500);
+                        $("#post-creation-menu").fadeToggle(500);
+                        window.activeSubWindow = null;
+                    });
+                });
+            </script>
+        </div>
+
+        <div id="post-creation-menu">
+            <img src="./images/img.png">
+        </div>
+
+    </body>
+
+    <script>
+        /* init */
+        $( document ).ready(function() {
+            $("#mask-grayout-fullpage").toggle();
+            $("#post-creation-menu").toggle();
+
+            var activeSubWindow = null;
+        });
+    </script>
+</html>
