@@ -3,15 +3,15 @@
 <html lang="en">
     <head>
         <title>MGAF</title>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/index.css">
     </head>
 
     <body>
-        <script src="js/jQuery-3.6.0.js"></script>
+        <script src="../js/jQuery-3.6.0.js"></script>
 
         <nav id="top-nav-bar">
             <div id="logo">MGAF</div>
-            <div id="tnb-placeholder-text">Development Frontend Demo</div>
+            <div id="tnb-placeholder-text">Development Build</div>
         </nav>
 
         <div id="body-region">
@@ -107,7 +107,7 @@
         </div>
 
         <div id="post-creation-menu">
-            <img src="images/img.png">
+            <img src="../images/img.png">
         </div>
 
     </body>
@@ -118,7 +118,7 @@
             $("#mask-grayout-fullpage").toggle();
             $("#post-creation-menu").toggle();
 
-            var activeSubWindow = null;
+            window.activeSubWindow = null;
         });
     </script>
 </html>
