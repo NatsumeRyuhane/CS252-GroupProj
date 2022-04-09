@@ -37,6 +37,56 @@ There is a tutorial with this on MDN, there is even a use case with Flask under 
 
 > https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data
 
+## How to SQL
+
+This is a code segment from my previous project
+
+```python
+import pymysql
+
+db = pymysql.connect(host="localhost", user="root", password="12345678", database="assignment_3_db")
+cursor = db.cursor()
+
+
+def function_1():
+    global cursor
+    cursor.execute(
+        """
+        SELECT student.student_id, student_name, course_name, score
+        FROM student, course, grade
+        WHERE
+            (
+                student.student_id = grade.student_id
+                AND
+                course.course_id = grade.course_id
+            )
+        ;
+        """
+    )
+    return cursor.fetchall()
+
+```
+
+Basically it says this:
+
+```python
+import pymysql
+
+db = pymysql.connect(host=your_mysql_host, user=your_mysql_username, password=your_password, database=which_db_you_wanna_use)
+cursor = db.cursor()
+
+
+def function_1():
+    global cursor  # we need that cursor object to interact with the SQL database
+    cursor.execute(
+        """
+        WRITE RAW SQL COMMANDS HERE AS YOU WOULD IN DIRECTLY USING MYSQL
+        """
+    )
+    return cursor.fetchall()  # get the results of the SQL command above, you need to run this EVERY TIME you execute a chunk of SQL command or the results will pile up in the buffer
+
+```
+
 ## References & Tutorials
 
 * [HTML, CSS, JS] MDN Web Docs - https://developer.mozilla.org/en-US/
