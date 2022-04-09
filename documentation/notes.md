@@ -42,3 +42,8 @@ There is a tutorial with this on MDN, there is even a use case with Flask under 
 * [HTML, CSS, JS] MDN Web Docs - https://developer.mozilla.org/en-US/
 * [jQuery] - https://www.runoob.com/jquery/jquery-tutorial.html
 * [jinja2] - https://geek-docs.com/python/python-tutorial/python-jinja.html
+
+
+## Comments & Gibberish
+
+> If we modify the template and the business logics, this project can also be repurposed for the AI course as well, save us some time - CYL, APR 9
