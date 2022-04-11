@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>MGAF</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/function-page.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+    </head>
+
+    <body>
+        <script src="../static/js/jQuery-3.6.0.js"></script>
+
+        <div class="banner-pic"></div>
+
+        <div class="function-pane">
+                <div id="login-function">
+                    <h1 id="login-prompt">Login to MGAF</h1>
+
+                    <form action="/user-login-auth" method="get" id="login-form">
+                        <div   class="">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" required>
+                        </div>
+
+                        <div class="group-ipt">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" required>
+                        </div>
+
+                        <div class="button">
+                            <button type="submit" id="button">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -24,61 +24,24 @@
                 </div>
 
                 <div id="login-display">
-                    <p>Logged in as <strong><u>User#999</u></strong></p>
+                    {% if username %}
+                        <p>Logged in as <strong><u>{{ username }}</u></strong></p>
+                    {% else %}
+                        <a href="/login"><u>Login</u></a>
+                    {% endif %}
                 </div>
             </div>
 
             <div id="content-main">
-                <div class="user-post">
-                    <div class="post-user-info">User#001</div>
-                    <div class="post-content">Post Content 1</div>
-                    <div class="post-like-count">20 people liked this.</div>
-                </div>
-
-                <div class="user-post">
-                    <div class="post-user-info">User#001</div>
-                    <div class="post-content">Post Content 2</div>
-                    <div class="post-like-count">15 people liked this.</div>
-                </div>
-
-                <div class="user-post">
-                    <div class="post-user-info">User#012</div>
-                    <div class="post-content">Post Content 3</div>
-                    <div class="post-like-count">32 people liked this.</div>
-                </div>
-
-                <div class="user-post">
-                    <div class="post-user-info">User#012</div>
-                    <div class="post-content">Post Content 4</div>
-                    <div class="post-like-count">32 people liked this.</div>
-                </div>
-
-                <div class="user-post">
-                    <div class="post-user-info">User#012</div>
-                    <div class="post-content">Post Content 5</div>
-                    <div class="post-like-count">32 people liked this.</div>
-                </div>
-
-                <div class="user-post">
-                    <div class="post-user-info">User#012</div>
-                    <div class="post-content">Post Content 6</div>
-                    <div class="post-like-count">32 people liked this.</div>
-                </div>
-
-                <div class="user-post">
-                    <div class="post-user-info">User#012</div>
-                    <div class="post-content">Post Content 7</div>
-                    <div class="post-like-count">32 people liked this.</div>
-                </div>
-
-                <div class="user-post">
-                    <div class="post-user-info">User#012</div>
-                    <div class="post-content">Post Content 8</div>
-                    <div class="post-like-count">32 people liked this.</div>
-                </div>
+                {% if post_content %}
+                    {{ post_content }}
+                {% else %}
+                    <div id="err-no-post">No Content</div>
+                {% endif %}
             </div>
         </div>
 
+        {% if user_logged_in %}
         <div id="btn-new-post">
             <p id="btn-new-post-icon">+</p>
             <p id="btn-new-post-text">New Post</p>
@@ -93,6 +56,7 @@
                 });
             </script>
         </div>
+        {% endif %}
 
         <div id="mask-grayout-fullpage">
             <script>
@@ -107,14 +71,14 @@
         </div>
 
         <div id="post-creation-menu">
-            <img src="../static/images/img.png">
+            /* here */
         </div>
 
     </body>
 
     <script>
         /* init */
-        $( document ).ready(function() {
+        $(document).ready(function() {
             $("#mask-grayout-fullpage").toggle();
             $("#post-creation-menu").toggle();
 
