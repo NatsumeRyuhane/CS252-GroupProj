@@ -16,21 +16,42 @@
     margin-bottom: 2px;
 }
 
-.group-ipt {
+#login-form {
     width: 100%;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    border-left: 3px var(--accent-color-alt) solid;
+    flex-direction: column;
+}
+
+.group-ipt {
+    width: 50%;
     box-sizing: border-box;
-    padding: 1rem .8rem;
+    margin: 0.5rem;
     background: rgba(255,255,255,0.5);
 }
 
-#button{
-			width: 20%;
-			background: #0f88eb;
+.group-ipt > label {
+    color: var(--accent-color-alt);
+}
+
+.group-ipt > label, input{
+    display: block;
+    width: 100%;
+    margin-bottom: 0.3rem;
+}
+
+#login-button {
+            min-width: 5rem;
+            color: white;
+			background-color: var(--accent-color-alt);
+            overflow: hidden;
     		box-shadow: none;
     		border: 0;
     		border-radius: 3px;
-    		line-height: 41px;
-    		color: #fff;
+    		line-height: 2rem;
+            margin-top: 1rem;
     		display: block;
     		font-size: 15px;
     		cursor: pointer;
