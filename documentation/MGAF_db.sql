@@ -26,3 +26,4 @@ ALTER TABLE posts ADD FOREIGN KEY(post_by) REFERENCES users(user_id) ON DELETE R
 
 -- fetch 
 SELECT * FROM users;
+SELECT * FROM posts;
