@@ -13,50 +13,54 @@
         <div class="banner-pic"></div>
 
         <div class="function-pane">
-                <div id="login-function">
-                    <h1 id="login-prompt">Login to MGAF</h1>
+            <div id="login-function">
+                <h1 id="login-prompt">Login to MGAF</h1>
 
-                    <form action="/user-login-auth" method="get" id="login-form">
-                        <div class="group-ipt">
-                            <label for="username">Username</label>
-                            <input type="text" name="username" id="username" required>
-                        </div>
+                <form action="/user-login-auth" method="get" id="login-form">
+                    <div class="group-ipt">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" required>
+                    </div>
 
-                        <div class="group-ipt">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" required>
-                        </div>
+                    <div class="group-ipt">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" required>
+                    </div>
 
-                        <div class="button">
-                            <button type="submit" id="login-button">Login</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="button">
+                        <button type="submit" id="login-button">Login</button>
+                    </div>
+                </form>
+            </div>
 
-                <div id="divisor">
-                    <h1>OR</h1>
-                    <div></div>
-                </div>
+            <div id="divisor">
+                <h1>OR</h1>
+                <div></div>
+            </div>
 
-                <div id="register-function">
-                    <h1 id="register-prompt">Register New Account</h1>
+            <div id="register-function">
+                <h1 id="register-prompt">Register New Account</h1>
 
-                    <form action="/user-register" method="get" id="register-form">
-                        <div class="group-ipt">
-                            <label for="username">Username</label>
-                            <input type="text" name="username" id="register-username" required>
-                        </div>
+                <form action="/user-register" method="get" id="register-form">
+                    <div class="group-ipt">
+                        <label for="register-username">Username</label>
+                        <input type="text" name="username" id="register-username" required>
+                    </div>
 
-                        <div class="group-ipt">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="register-password" required>
-                        </div>
+                    <div class="group-ipt">
+                        <label for="register-email">E-mail Address</label>
+                        <input type="text" name="username" id="register-email" required>
+                    </div>
 
-                        <div class="button">
-                            <button type="submit" id="register-button">Register</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="group-ipt">
+                        <label for="register-password">Password</label>
+                        <input type="password" name="password" id="register-password" required>
+                    </div>
+
+                    <div class="button">
+                        <button type="submit" id="register-button">Register</button>
+                    </div>
+                </form>
             </div>
         </div>
     </body>
