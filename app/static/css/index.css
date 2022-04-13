@@ -61,14 +61,14 @@ body {
 
 #side-nav > * {
     text-align: center;
-    margin: 1rem 0.5rem 1rem 0.5rem;
+    padding: 1rem 0.5rem 1rem 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: white;
 }
 
-#sidenav > * :hover {
+#side-nav > *:hover {
     animation-name: 'btn-select';
     animation-duration: 250ms;
     animation-fill-mode: forwards;
@@ -89,6 +89,10 @@ body {
     width: 100%;
 }
 
+#login-display > a {
+    color: var(--accent-color-alt);
+}
+
 #content-main {
     flex: 8;
     display: flex;
@@ -106,7 +110,7 @@ body {
     margin-bottom: 1rem;
 }
 
-  .user-post {
+.user-post {
     margin: 0.5rem 0 0.5rem 0;
     display: flex;
     flex-direction: column;
