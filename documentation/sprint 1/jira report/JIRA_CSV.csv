@@ -1,0 +1,145 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Fix versions,Due date,Votes,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Outward issue link (Blocks),Outward issue link (Blocks),Outward issue link (Relates),Outward issue link (Relates),Outward issue link (Relates),Outward issue link (Relates),Outward issue link (Relates),Custom field (Development),Custom field (Issue color),Custom field (Rank),Sprint,Custom field (Start date),Custom field (Story point estimate),Parent,Parent summary,Status Category
+Set up the database with MySQL,MGAF-24,10062,Task,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,Done,Rona He,6176afd1e79ff6006f87d070,Rona He,6176afd1e79ff6006f87d070,Rona He,6176afd1e79ff6006f87d070,11/Apr/22 12:47 PM,13/Apr/22 12:48 PM,13/Apr/22 2:11 PM,12/Apr/22 4:58 PM,MUST Graduate Application Forum v1.1,,0,,,Rona He,6176afd1e79ff6006f87d070,,,,,,,,,,,,,,,,"{repository={count=2, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":2,""lastUpdated"":""2022-04-13T12:58:30.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":2,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000fd:,MGAF Sprint 1,,1.0,,,Done
+Build the remote collaboration space,MGAF-21,10059,Task,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,Done,,,Rona He,6176afd1e79ff6006f87d070,Rona He,6176afd1e79ff6006f87d070,04/Apr/22 11:08 AM,12/Apr/22 4:55 PM,13/Apr/22 2:03 PM,09/Apr/22 5:42 PM,MUST Graduate Application Forum v1.1,,0,,,Rona He,6176afd1e79ff6006f87d070,,,,,,,,,,,,,,,,{},,0|i000fi:i,MGAF Sprint 1,,1.0,,,Done
+Set up the environment for the project,MGAF-20,10058,Task,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,Done,,,Rona He,6176afd1e79ff6006f87d070,Rona He,6176afd1e79ff6006f87d070,04/Apr/22 11:06 AM,12/Apr/22 4:55 PM,13/Apr/22 1:59 PM,04/Apr/22 11:27 AM,MUST Graduate Application Forum v1.1,,0,,,Rona He,6176afd1e79ff6006f87d070,,,,,,,,,,,,,,,,"{repository={count=1, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":1,""lastUpdated"":""2022-04-13T13:46:51.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":1,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000fh:i,MGAF Sprint 1,,3.0,,,Done
+"As a admin, I want to have several permissions so that I can better manage the forum",MGAF-19,10057,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,High,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 11:59 AM,11/Apr/22 11:34 AM,11/Apr/22 11:34 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# The admin can be logged in with an admin account and have multiple admin permissions
+# Some illegal or inappropriate information in the forum can be deleted permanently by pressing the “Delete” button
+# The users who have posted lots of inappropriate information can be blocked by the admin temporally or permanently by setting the time duration.",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,,,,,,"{repository={count=1, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":1,""lastUpdated"":""2022-04-11T12:55:06.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":1,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000hr:5,MGAF Sprint 2,,5.0,,,To Do
+"As a registered user, I want to tag my post when I post information so that I can make it more distinctive and help users with specific needs",MGAF-18,10056,Story,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Low,Done,Yulong Cao,622565b514cd2400690a3ede,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 11:54 AM,13/Apr/22 3:13 PM,13/Apr/22 3:14 PM,12/Apr/22 7:59 PM,MUST Graduate Application Forum v1.1,,0,"Acceptance Criteria \[Abstract]
+
+# This page should have an “add label” button
+# The tag will be below the post when seeing the posts",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,MGAF-6,MGAF-7,MGAF-19,,,,,"{repository={count=3, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":3,""lastUpdated"":""2022-04-13T13:42:40.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":3,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000hi:,MGAF Sprint 1,,3.0,,,Done
+"As a registered user, I want to enter keywords to search for specific offers so that I can get more targeted information about offers",MGAF-17,10055,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Low,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 11:49 AM,11/Apr/22 11:32 AM,11/Apr/22 11:32 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# This page contains a form with the following fields:
+
+* Drop down boxes for country, university, etc
+* Search button
+
+  2. After clicking the search button, offers with qualifying conditions will be displayed",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,,,,,,{},,0|i000i3:,MGAF Sprint 3,,3.0,,,To Do
+"As a registered user, I want to select tags to search for specific posts so that I can get more targeted information",MGAF-16,10054,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 11:42 AM,11/Apr/22 11:32 AM,11/Apr/22 11:32 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# This page contains a form with the following fields:
+
+* Box for entering tags
+* Search button
+
+  2. After clicking the search button, the posts with tags will be displayed",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,MGAF-3,,MGAF-18,,,,,{},,0|i000i1:,MGAF Sprint 3,,3.0,,,To Do
+"As a registered user, I want to enter keywords to search for specific posts so that I can get more targeted information",MGAF-15,10053,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Low,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 11:38 AM,11/Apr/22 10:48 AM,11/Apr/22 11:32 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# This page contains a form with the following fields:
+
+* Box for entering keywords
+* Search button
+
+  2. After clicking the search button, the posts with keywords will be displayed",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,MGAF-3,,MGAF-14,,,,,{},,0|i000i7:,MGAF Sprint 3,,5.0,,,To Do
+"As a registered user, I want to upload my offer related information so that it can be provided to other users in need",MGAF-14,10052,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,High,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 11:35 AM,11/Apr/22 11:33 AM,11/Apr/22 11:33 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# This page contains a form with the following fields:
+
+* Offer picture upload button
+* Fill in all information boxes of offer, such as country, University, GPA, etc
+* Save button
+
+   2. After clicking the Save button, the offer display page can display the relevant information of this offer",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,MGAF-16,MGAF-17,MGAF-19,,,{},,0|i000hr:2,MGAF Sprint 2,,5.0,,,To Do
+"As a registered user, I want to change my profile photo so that I can show my personality and be memorized better",MGAF-13,10051,Subtask,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 10:25 AM,28/Mar/22 10:26 AM,28/Mar/22 11:51 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# The profile photo can be set or changed after registration
+# The changing page contains the following fields:
+
+* A place where a photo can be selected and uploaded from the system photo library
+* Save button
+
+  3. After saving, the profile photo can be seen by any person in the forum.",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,,,,,,{},,0|i000hr:,MGAF Sprint 3,,2.0,10050,"As a registered user, I want to change my personal information so that I can update my personal information at any time",To Do
+"As a registered user, I want to change my personal information so that I can update my personal information at any time",MGAF-12,10050,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,High,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 10:03 AM,11/Apr/22 11:34 AM,11/Apr/22 11:33 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# This page contains a form with the following fields:
+
+* Personal information before modification
+* Modify button
+* Save button
+
+  2. After saving, the personal information should be consistent with the modified content",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,MGAF-19,,,,,{},,0|i000hu:,MGAF Sprint 3,,2.0,,,To Do
+"As a registered user, I want to receive feedback from likes and comments so that I can understand the situation and reply to the inquirer",MGAF-11,10049,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Lowest,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 9:57 AM,11/Apr/22 11:25 AM,11/Apr/22 10:45 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# The page should show the specific reply received
+# The page should show the inquirer
+# This page contains a form with the following fields:
+
+* Like message summary
+* Comment message summary",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,MGAF-10,,,,,{},,0|i000j3:,MGAF Sprint 3,,3.0,,,To Do
+"As a registered user, I want to comment on other people's posts so that I can learn more relevant information from the sender",MGAF-10,10048,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 9:54 AM,11/Apr/22 11:30 AM,11/Apr/22 11:30 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# The page should have a form to write the comment with a submit button and a delete button
+# Users can comment on other people's posts by pressing the submit button
+# Users can delete their comments by pressing the delete button",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,MGAF-19,,,,,{},,0|i000hr:b,MGAF Sprint 2,,2.0,,,To Do
+"As a registered user, I want to give a like to other people's posts so that I can express that this post is very helpful to me",MGAF-9,10047,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Low,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,28/Mar/22 9:50 AM,11/Apr/22 11:25 AM,11/Apr/22 10:45 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# The page should have a like button
+# Users can give a like to other people's posts by pressing the like button
+# Users can cancel the like by pressing the like button again",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,MGAF-3,,MGAF-10,MGAF-11,,,,{},,0|i000hr:fi,MGAF Sprint 2,,3.0,,,To Do
+"As a registered user, I can reset my password so that if I forget my password, I still have a chance to reset the password and have access to the forum",MGAF-8,10046,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,27/Mar/22 9:33 AM,10/Apr/22 12:16 AM,11/Apr/22 10:47 AM,,,,0,"Acceptance Criteria \[Abstract]
+
+# The users can choose an authentication question with their answer when registering or in the Account Management.
+# The Login page provides user with an option of  “Forgot my password”, which is a hyperlink to the password resetting page.
+# Password resetting page includes a form with fields of username, corresponding authentication question, answer, and the new password the user wants to be set.
+# An incorrect answer will cause an alert message which reminds that the authentication failed
+# A right answer will l lead to a new page with new password information",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,MGAF-5,,,,,,,{},,0|i000hr:9,MGAF Sprint 2,,3.0,,,To Do
+"As a registered user, I want to post my experience with pictures so that help others understand the information of applying.",MGAF-7,10045,Story,To Do,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Low,,,,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,27/Mar/22 9:24 AM,11/Apr/22 11:30 AM,11/Apr/22 10:58 PM,,,,0,"Acceptance Criteria \[Abstract]
+
+# The page should contain these elements:
+
+* A place where pictures can be selected and uploaded from the system photo library
+* Post button
+
+  2. Users can post the pictures after pressing the post button
+
+  3. Posts sent by users can be seen by others",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,MGAF-3,,MGAF-9,MGAF-12,MGAF-16,MGAF-15,MGAF-19,{},,0|i000hr:d,MGAF Sprint 2,,5.0,,,To Do
+"As a registered user, I want to post my experience with text so that help others understand the information of applying.",MGAF-6,10044,Story,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,Done,Lu Jie,6225674eb7e7c7007158c9f4,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,27/Mar/22 9:21 AM,13/Apr/22 10:46 AM,13/Apr/22 10:47 AM,12/Apr/22 7:59 PM,MUST Graduate Application Forum v1.1,,0,"Acceptance Criteria \[Abstract]
+
+# The page should contain these elements:
+
+*  Form to be written with text
+* Post button
+
+   2. Users can post the text after pressing the post button
+
+   3. Posts sent by users can be seen by others",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,MGAF-3,,MGAF-9,MGAF-10,MGAF-15,MGAF-16,MGAF-19,"{repository={count=2, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":2,""lastUpdated"":""2022-04-13T13:40:14.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":2,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000h9:,MGAF Sprint 1,,3.0,,,Done
+" As a registered user, I want to login with my username and password so that I can access a series of functions provided on the website.",MGAF-5,10043,Story,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,High,Done,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,27/Mar/22 9:18 AM,12/Apr/22 4:55 PM,12/Apr/22 10:19 PM,12/Apr/22 12:55 AM,MUST Graduate Application Forum v1.1,,0,"Acceptance Criteria \[Abstract]
+
+# The login page contains a form with the following fields:
+
+* Enter username option
+* Enter Password option
+* Submit button
+
+  2. Enter the registered username and password and click the “log in” button correctly, then the user will access the website
+
+  3. Incorrect input of user information will prompt the error message that specifies that the username or password was wrong
+
+  4. Correct input will prompt successful login information",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,MGAF-3,MGAF-10,MGAF-11,MGAF-14,,"{repository={count=3, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":3,""lastUpdated"":""2022-04-11T11:18:57.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":3,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000gr:,MGAF Sprint 1,,2.0,,,Done
+"As an unregistered user, I want to register so that I can access more functions provided by the forum.",MGAF-4,10042,Story,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Highest,Done,Rona He,6176afd1e79ff6006f87d070,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,26/Mar/22 5:26 PM,13/Apr/22 11:38 AM,12/Apr/22 10:17 PM,12/Apr/22 12:54 AM,MUST Graduate Application Forum v1.1,,0,"Acceptance Criteria \[Abstract]
+
+# The registration page should provide the new user with a registration button.
+# The registration page contains a form with the following fields:
+
+* Enter username option
+* Enter password option
+* Submit button
+* Filling all the fields in the form and submitting the registration page form correctly will create a new account
+
+  3. Incorrect input of user information will cause an alert message which reminds that the username or password is wrong
+
+  4. Correct input will lead to a new page with successful registration information
+
+  5. New users can successfully log in to the system by using the account after registering",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,MGAF-3,,,,,"{repository={count=1, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":1,""lastUpdated"":""2022-04-11T11:47:52.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":1,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000g5:,MGAF Sprint 1,,5.0,,,Done
+"As a user, I want to be able to go to the home page of MUST Graduate Application Forum so that I can know and access a series of functions provided by the forum.",MGAF-3,10041,Story,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Highest,Done,Yulong Cao,622565b514cd2400690a3ede,Rui Chen,61c6bad9e76379006875caed,Rui Chen,61c6bad9e76379006875caed,26/Mar/22 5:23 PM,12/Apr/22 4:55 PM,12/Apr/22 10:13 PM,10/Apr/22 12:03 AM,MUST Graduate Application Forum v1.1,,0,"Acceptance Criteria \[Abstract]
+
+# There will be a navigation bar on the left side of the home page, which contains the options of Latest Posts, Offers Overview, Notifications and Account Management.
+# If the user hasn’t registered, there will be one reminder sign showing as “ Sign up free”, which is a hyperlink to the registration page.
+# If the user has registered, the current user account sign will be shown as “Logged in as xxx” if, which is also a hyperlink to the user account management page.
+# The latest Posts stream will be shown on the main part of the page.",,Rui Chen,61c6bad9e76379006875caed,,,,,,,,,,,MGAF-17,,,,,"{repository={count=1, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":1,""lastUpdated"":""2022-04-11T10:41:06.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":1,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000fj:,MGAF Sprint 1,,3.0,,,Done
+Update Project readme.md,MGAF-2,10037,Task,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,Done,Yulong Cao,622565b514cd2400690a3ede,Yulong Cao,622565b514cd2400690a3ede,Yulong Cao,622565b514cd2400690a3ede,07/Mar/22 10:59 AM,12/Apr/22 4:55 PM,12/Apr/22 10:29 PM,04/Apr/22 11:26 AM,MUST Graduate Application Forum v1.1,,0,,,Yulong Cao,622565b514cd2400690a3ede,,,,,,,,,,,,,,,,"{repository={count=1, dataType=repository}, json={""cachedValue"":{""errors"":[],""summary"":{""repository"":{""overall"":{""count"":1,""lastUpdated"":""2022-03-07T11:09:39.000+0800"",""dataType"":""repository""},""byInstanceType"":{""GitHub"":{""count"":1,""name"":""GitHub""}}}}},""isStale"":true}}",,0|i000fh:,MGAF Sprint 1,,1.0,,,Done
+Create and Link GitHub Repository to Jira,MGAF-1,10036,Task,Done,MGAF,MUST Graduate Application Forum,software,Yulong Cao,622565b514cd2400690a3ede,,Medium,Done,Yulong Cao,622565b514cd2400690a3ede,Yulong Cao,622565b514cd2400690a3ede,Yulong Cao,622565b514cd2400690a3ede,07/Mar/22 10:59 AM,12/Apr/22 4:55 PM,12/Apr/22 10:30 PM,04/Apr/22 11:26 AM,MUST Graduate Application Forum v1.1,,0,,,Yulong Cao,622565b514cd2400690a3ede,,,,,,,,,,,,,,,,{},,0|i000ff:,MGAF Sprint 1,,2.0,,,Done
