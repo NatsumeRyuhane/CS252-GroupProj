@@ -973,164 +973,169 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="284" parent="274" name="posts">
+    <routine id="284" parent="274" name="insert_post">
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+      <SourceTextLength>295</SourceTextLength>
+    </routine>
+    <table id="285" parent="274" name="posts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="285" parent="274" name="users">
+    <table id="286" parent="274" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="286" parent="275" name="course">
+    <table id="287" parent="275" name="course">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="287" parent="275" name="grade">
+    <table id="288" parent="275" name="grade">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="288" parent="275" name="student">
+    <table id="289" parent="275" name="student">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="289" parent="284" name="post_id">
+    <column id="290" parent="285" name="post_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="290" parent="284" name="post_content">
+    <column id="291" parent="285" name="post_content">
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="291" parent="284" name="post_date">
+    <column id="292" parent="285" name="post_date">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="292" parent="284" name="post_by">
+    <column id="293" parent="285" name="post_by">
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="293" parent="284" name="post_likes">
+    <column id="294" parent="285" name="post_likes">
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <foreign-key id="294" parent="284" name="posts_ibfk_1">
+    <foreign-key id="295" parent="285" name="posts_ibfk_1">
       <ColNames>post_by</ColNames>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="295" parent="284" name="post_by">
+    <index id="296" parent="285" name="post_by">
       <ColNames>post_by</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="296" parent="284" name="PRIMARY">
+    <key id="297" parent="285" name="PRIMARY">
       <ColNames>post_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="297" parent="285" name="user_id">
+    <column id="298" parent="286" name="user_id">
       <DataType>int unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="298" parent="285" name="user_name">
+    <column id="299" parent="286" name="user_name">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="299" parent="285" name="user_password">
+    <column id="300" parent="286" name="user_password">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="300" parent="285" name="user_email">
+    <column id="301" parent="286" name="user_email">
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="301" parent="285" name="user_register_date">
+    <column id="302" parent="286" name="user_register_date">
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="302" parent="285" name="user_session_id">
+    <column id="303" parent="286" name="user_session_id">
       <DataType>char(36)|0s</DataType>
       <Position>6</Position>
     </column>
-    <key id="303" parent="285" name="PRIMARY">
+    <key id="304" parent="286" name="PRIMARY">
       <ColNames>user_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="304" parent="286" name="course_id">
+    <column id="305" parent="287" name="course_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="305" parent="286" name="course_name">
+    <column id="306" parent="287" name="course_name">
       <DataType>char(100)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="306" parent="286" name="PRIMARY">
+    <key id="307" parent="287" name="PRIMARY">
       <ColNames>course_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="307" parent="287" name="student_id">
+    <column id="308" parent="288" name="student_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="308" parent="287" name="course_id">
+    <column id="309" parent="288" name="course_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="309" parent="287" name="score">
+    <column id="310" parent="288" name="score">
       <DataType>smallint|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="310" parent="287" name="grade_ibfk_1">
+    <foreign-key id="311" parent="288" name="grade_ibfk_1">
       <ColNames>student_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>student_id</RefColNames>
       <RefTableName>student</RefTableName>
     </foreign-key>
-    <foreign-key id="311" parent="287" name="grade_ibfk_2">
+    <foreign-key id="312" parent="288" name="grade_ibfk_2">
       <ColNames>course_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>course_id</RefColNames>
       <RefTableName>course</RefTableName>
     </foreign-key>
-    <index id="312" parent="287" name="course_id">
+    <index id="313" parent="288" name="course_id">
       <ColNames>course_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="313" parent="287" name="PRIMARY">
+    <key id="314" parent="288" name="PRIMARY">
       <ColNames>student_id
 course_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="314" parent="288" name="student_id">
+    <column id="315" parent="289" name="student_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="315" parent="288" name="student_name">
+    <column id="316" parent="289" name="student_name">
       <DataType>char(10)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="316" parent="288" name="PRIMARY">
+    <key id="317" parent="289" name="PRIMARY">
       <ColNames>student_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>

@@ -12,7 +12,7 @@ class User:
         cursor.execute(
         f"""
         SELECT user_name
-        FROM users
+        FROM MGAF.users
         WHERE user_id = {self.uid};
         """)
 
@@ -28,7 +28,7 @@ class User:
         cursor.execute(
         f"""
         SELECT user_password
-        FROM users
+        FROM MGAF.users
         WHERE user_id = '{self.uid}';
         """)
 
@@ -44,7 +44,7 @@ class User:
         cursor.execute(
         f"""
         SELECT user_session_id
-        FROM users
+        FROM MGAF.users
         WHERE user_id = '{self.uid}';
         """)
 
@@ -59,7 +59,7 @@ class User:
 
         cursor.execute(
         f"""
-        UPDATE users
+        UPDATE MGAF.users
         SET user_session_id=uuid()
         WHERE user_id = '{self.uid}';
         """)
@@ -74,7 +74,7 @@ def get_uid_by_sid(sid: str, db: pymysql.connections.Connection):
     cursor.execute(
     f"""
     SELECT user_id 
-    FROM users
+    FROM MGAF.users
     WHERE user_session_id = '{sid}';
     """)
 
@@ -88,7 +88,7 @@ def get_uid_by_username(username: str, db: pymysql.connections.Connection):
     cursor.execute(
     f"""
     SELECT user_id 
-    FROM users
+    FROM MGAF.users
     WHERE user_name = '{username}';
     """)
 

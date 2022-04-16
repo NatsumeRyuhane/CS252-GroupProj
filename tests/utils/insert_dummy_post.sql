@@ -7,7 +7,7 @@ BEGIN
     WHILE v1 > 0 DO
     INSERT INTO posts (post_content, post_date, post_by, post_likes)
     VALUE
-        ('Hi! This is a code-generated test post.', now(), FLOOR(1 + (RAND() * 4)), RAND() * 100);
+        ('{"title": "Test Post", "body": "This is a test post."}', now(), FLOOR(1 + (RAND() * 4)), RAND() * 100);
         SET v1 = v1 - 1;
     END WHILE;
 END;

@@ -10,6 +10,6 @@ VALUE
 
 INSERT INTO posts (post_content, post_date, post_by, post_likes)
 VALUE
-    ('Hi! This is a test post.', now(), 1, 0),
-    ('Hi! This is another test post.', now(), 2, 0)
+    ('{"title": "Test Post", "body": "This is a test post."}', now(), 3, 0),
+    ('{"title": "Test Post", "body": "This is another test post."}', now(), 2, 0)
 ;

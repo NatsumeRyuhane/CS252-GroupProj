@@ -133,9 +133,22 @@ body {
 }
 
 .post-content {
-    height: fit-content;
-    padding: 1rem 0.5rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem 1rem 0.5rem;
     background-color: white;
+}
+
+.post-title {
+    color: var(--accent-color-main);
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.post-author {
+    color: #666666;
+    font-size: small;
 }
 
 .post-like-count {
