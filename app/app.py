@@ -73,12 +73,6 @@ def create_post():
 
 @app.route('/get-post/<page>')
 def get_post(page):
-    # TODO: implement this function
-    # 1. get the latest posts by call posts.get_latest_posts(page*10) <- lets say we make 10 posts a 'page'
-    # 2. parse the return value from the function
-    # 3. use jinja2 to generate HTML for each post
-    # 4. use js to update the on-screen html content
-    # the template:
     raw_posts = posts.get_latest_posts(int(page)*10, db_conn)
     post_html_template = jinja2.Template("""
     <div class="user-post">
