@@ -18,9 +18,9 @@
             <div id="side-nav-bar">
                 <div id="side-nav">
                     <div>Latest Posts</div>
-                    <div>Offers Overview</div>
-                    <div>Notifications</div>
-                    <div>Account Management</div>
+                    <div>Offers Overview</div> <!-- TODO -->
+                    <div>Notifications</div> <!-- TODO -->
+                    <div>Account Management</div> <!-- TODO: Add change passwd, logout, change username -->
                 </div>
 
                 <div id="login-display">
@@ -77,21 +77,23 @@
             </script>
         </div>
 
+        <!-- TODO: Add post tags -->
+        <!-- TODO: Add file upload support -->
         <div id="post-creation-menu">
             <form action="/create-post" method="get" id="post-creation-form">
-                    <div id="post-creation-title">
-                        <input type="text" name="post-title" id="post-title" placeholder="Post Title" required>
-                    </div>
+                <div id="post-creation-title">
+                    <input type="text" name="post-title" id="post-title" placeholder="Post Title" required>
+                </div>
 
-                    <div id="post-creation-body">
-                        <textarea type="text" name="post-body" id="post-body" placeholder="What you wanna say?" required></textarea>
-                    </div>
+                <div id="post-creation-body">
+                    <textarea type="text" name="post-body" id="post-body" placeholder="What you wanna say?" required></textarea>
+                </div>
 
-                    <input type="hidden" name="sessionid" id="sessionid" value="{{ sid }}">
+                <input type="hidden" name="sessionid" id="sessionid" value="{{ sid }}">
 
-                    <div class="button">
-                        <button type="submit" id="post-send">Send</button>
-                    </div>
+                <div class="button">
+                    <button type="submit" id="post-send">Send</button>
+                </div>
             </form>
         </div>
 

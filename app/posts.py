@@ -34,3 +34,9 @@ def get_latest_posts(count: int, db: pymysql.connections.Connection):
         return None
     else:
         return result
+
+
+def like(post_id: int, uid: int, db: pymysql.connections.Connection):
+    # handles user like posts
+    # TODO
+    pass

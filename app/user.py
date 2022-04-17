@@ -75,10 +75,10 @@ def get_uid_by_sid(sid: str, db: pymysql.connections.Connection):
 
     cursor.execute(
         f"""
-    SELECT user_id 
-    FROM MGAF.users
-    WHERE user_session_id = '{sid}';
-    """)
+        SELECT user_id 
+        FROM MGAF.users
+        WHERE user_session_id = '{sid}';
+        """)
 
     result = cursor.fetchall()
     if result == ():
@@ -92,10 +92,10 @@ def get_uid_by_username(username: str, db: pymysql.connections.Connection):
 
     cursor.execute(
         f"""
-    SELECT user_id 
-    FROM MGAF.users
-    WHERE user_name = '{username}';
-    """)
+        SELECT user_id 
+        FROM MGAF.users
+        WHERE user_name = '{username}';
+        """)
 
     result = cursor.fetchall()
     if result == ():
