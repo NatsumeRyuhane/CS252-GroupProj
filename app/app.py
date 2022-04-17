@@ -40,9 +40,10 @@ def login():
 def register():
     # TODO: implement this function
     # 1. get the form data
-    # 2. use templated mysql command to add user to user db
-    # 3. automatically get the session id and redirect user to index page in logged in state
-    pass
+
+    reg_result = user.register_user(username, email, password, db_conn)
+    if reg_result == 0:
+        return flask.redirect(location=f"/index?sessionid={user.User(user.get_uid_by_username(username, db_conn)).get_session_id()}", code=302)
 
 @app.route('/user-login-auth')
 def user_auth():

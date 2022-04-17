@@ -1,5 +1,5 @@
 import pymysql
-import jinja2
+
 
 def add_post(content: str, author: int, db: pymysql.connections.Connection):
     cursor = db.cursor()
@@ -12,8 +12,11 @@ def add_post(content: str, author: int, db: pymysql.connections.Connection):
         VALUES ('{content}', now(), {author}, 0);
         """)
 
-    if res == 1: return 0
-    else: return 1
+    if res == 1:
+        return 0
+    else:
+        return 1
+
 
 def get_latest_posts(count: int, db: pymysql.connections.Connection):
     cursor = db.cursor()
