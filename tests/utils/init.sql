@@ -3,9 +3,9 @@ USE `MGAF`;
 
 CREATE TABLE users (
   user_id     INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
-  user_name   VARCHAR(20) NOT NULL,
+  user_name   VARCHAR(20) NOT NULL UNIQUE,
   user_password   VARCHAR(255) NOT NULL,
-  user_email  VARCHAR(255) NOT NULL,
+  user_email  VARCHAR(255) NOT NULL UNIQUE,
   user_register_date   DATETIME NOT NULL,
   user_session_id CHAR(36),
   PRIMARY KEY (user_id)
