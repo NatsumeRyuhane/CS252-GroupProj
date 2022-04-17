@@ -36,14 +36,15 @@ def login():
     return flask.render_template("login.html")
 
 
-@app.route('/register')
+@app.route('/user-register')
 def register():
-    # TODO: implement this function
-    # 1. get the form data
+    username = flask.request.args.get("username")
+    email = flask.request.args.get("email")
+    password = flask.request.args.get("password")
 
     reg_result = user.register_user(username, email, password, db_conn)
     if reg_result == 0:
-        return flask.redirect(location=f"/index?sessionid={user.User(user.get_uid_by_username(username, db_conn)).get_session_id()}", code=302)
+        return flask.redirect(location=f"/index?sessionid={user.User(user.get_uid_by_username(username, db_conn), db_conn).get_session_id()}", code=302)
 
 @app.route('/user-login-auth')
 def user_auth():
