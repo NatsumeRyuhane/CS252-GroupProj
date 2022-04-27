@@ -1,4 +1,4 @@
-# CS360-GroupProj
+# CS252-GroupProj
 
 ## About
 
