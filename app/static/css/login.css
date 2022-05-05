@@ -4,39 +4,32 @@
     background-color: var(--accent-color-main);
 }
 
-#login-function {
+#prompt {
     display: flex;
-    flex: 4.5;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
-#register-function {
-    display: flex;
-    flex: 5;
-    flex-direction: column;
-    align-items: center;
-}
-
-#divisor {
-    flex: 0.5;
-    display: flex;
-    flex-direction: column;
+#heading-prompt-divisor {
     color: #cccccc;
-    align-items: center;
+    margin: auto 1rem;
 }
 
-#divisor > div {
-    height: 100%;
-    width: 0;
-    border-left: 0.5px solid #cccccc;
-    border-right: 0.5px solid #cccccc;
-}
-
-#login-prompt, #register-prompt {
-    color: var(--accent-color-alt);
+.function-prompt {
+    color: var(--accent-color-disable);
     white-space: nowrap;
-    margin-bottom: 2px;
+    padding: 0.1rem 0.5rem;
+}
+
+.heading-prompt-selected {
+    color: var(--accent-color-main);
+}
+
+#form-area {
+    display: flex;
+    justify-content: center;
 }
 
 #login-form, #register-form {
@@ -45,6 +38,7 @@
     padding-left: 1rem;
     display: flex;
     border-left: 3px var(--accent-color-alt) solid;
+    border-radius: 3px;
     flex-direction: column;
 }
 
