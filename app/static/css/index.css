@@ -72,6 +72,7 @@ body {
     animation-name: 'btn-select';
     animation-duration: 250ms;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 @keyframes btn-select {
@@ -245,19 +246,31 @@ body {
     outline: none;
 }
 
-#post-send {
-    background-color: var(--accent-color-alt);
-    font-weight: bold;
-    color: white;
+.post-menu-buttons {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: 2rem;
+    bottom: 1rem;
+    right: 1rem;
+    justify-content: right;
+}
+
+.post-menu-buttons > div, .post-menu-buttons > button {
+    font-size: small;
+    color: #888888;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    height: 2rem;
     width: 6rem;
-    bottom: 1rem;
-    right: 1rem;
     border: 1px #888888 solid;
     border-radius: 3px;
+    margin-left: 0.5rem;
+}
+
+#post-send {
+    font-weight: bold;
+    color: white;
+    background-color: var(--accent-color-alt);
     filter: drop-shadow(0 0.5rem 0.2rem rgba(0, 0, 0, 7%));
 }

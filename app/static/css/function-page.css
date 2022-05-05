@@ -16,6 +16,7 @@ body {
 .function-pane {
     display: flex;
     position: absolute;
+    flex-direction: column;
     float: left;
     top: 10%;
     left: -40%;

@@ -1,4 +1,7 @@
 :root {
     --accent-color-main: #4277bd;
     --accent-color-alt: #3269b6;
+    --accent-color-disable: #6e7d91;
+    --text-color-main: #666666;
+    --text-color-light: #888888;
 }

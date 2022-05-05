@@ -12,7 +12,7 @@ app = flask.Flask(__name__)
 
 @app.route('/index')
 def index():
-    sid = flask.request.args.get("sessionid")
+    sid = flask.request.cookies.get("session-id")
 
     if sid is None:
         return flask.render_template("index.html")
@@ -42,7 +42,10 @@ def register():
 
     reg_result = user.register_user(username, email, password, db_conn)
     if reg_result == 0:
-        return flask.redirect(location=f"/index?sessionid={user.User(user.get_uid_by_username(username, db_conn), db_conn).get_session_id()}", code=302)
+        response = flask.redirect(location=f"/index", code=302)
+        response.set_cookie(key = "session-id", value = user.User(user.get_uid_by_username(username, db_conn), db_conn).get_session_id(), path = "/")
+        return response
+
 
 
 @app.route('/user-login-auth')
@@ -54,7 +57,9 @@ def user_auth():
     if auth_user_uid:
         usr = user.User(auth_user_uid, db_conn)
         if password == usr.get_password():
-            return flask.redirect(location=f"/index?sessionid={usr.set_new_session_id()}", code=302)
+            response = flask.redirect(location=f"/index", code=302)
+            response.set_cookie(key = "session-id", value = usr.get_session_id(), path = "/")
+            return response
         else:
             return flask.redirect(location=f"/login?loginfail=True", code=302)
     else:
@@ -67,7 +72,7 @@ def create_post():
     body = flask.request.args.get("post-body")
     post_content = json.dumps({"title": title, "body": body})
 
-    sid = flask.request.args.get("sessionid")
+    sid = flask.request.cookies.get("session-id")
 
     posts.add_post(post_content, user.get_uid_by_sid(sid, db_conn), db_conn)
     return flask.redirect(location=f"/index?sessionid={sid}", code=302)
@@ -96,6 +101,24 @@ def get_post(page):
 
     return rendered_post
 
+@app.route('/account')
+def account_page():
+    sid = flask.request.cookies.get("session-id")
+
+    if sid is None:
+        return flask.render_template("index.html")
+    else:
+        auth_user_uid = user.get_uid_by_sid(sid, db_conn)
+        if auth_user_uid:
+            usr = user.User(auth_user_uid, db_conn)
+            return flask.render_template("account.html", sid=usr.get_session_id(), username=usr.get_username())
+        else:
+            return flask.render_template("index.html")
+
+
+@app.route('/user/<uid>')
+def user_page():
+    pass
 
 @app.route('/upload')
 def file_upload():
@@ -109,6 +132,12 @@ def post_detail_page(post_id):
     # the detail page of a post
     # TODO
     pass
+
+@app.route('/logout')
+def logout():
+    response = flask.redirect('/index')
+    response.delete_cookie("session-id")
+    return response
 
 
 if __name__ == '__main__':

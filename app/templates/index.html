@@ -20,7 +20,8 @@
                     <div>Latest Posts</div>
                     <div>Offers Overview</div> <!-- TODO -->
                     <div>Notifications</div> <!-- TODO -->
-                    <div>Account Management</div> <!-- TODO: Add change passwd, logout, change username -->
+                    <div onclick="window.location.href='/account'">Account Management</script>
+                    </div>
                 </div>
 
                 <div id="login-display">
@@ -89,9 +90,8 @@
                     <textarea type="text" name="post-body" id="post-body" placeholder="What you wanna say?" required></textarea>
                 </div>
 
-                <input type="hidden" name="sessionid" id="sessionid" value="{{ sid }}">
-
-                <div class="button">
+                <div class="post-menu-buttons">
+                    <div id="post-add-file">Add Image</div>
                     <button type="submit" id="post-send">Send</button>
                 </div>
             </form>

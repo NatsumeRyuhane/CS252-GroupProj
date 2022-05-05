@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Account Management</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/function-page.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/account.css">
+    </head>
+
+    <body>
+        <script src="../static/js/jQuery-3.6.0.js"></script>
+
+        <div class="banner-pic"></div>
+
+        <div class="function-pane">
+            <div id="prompt">
+                <p id="username-prompt" class="">{{ username }}</p>
+                <p>'s Account Settings</p>
+            </div>
+
+            <div class="nav">
+                <p onclick="window.location.href='/index'"><< Back to Index Page</p>
+            </div>
+
+            <div id="function-area">
+                <div class="function-block">
+                    <div class="function-name">
+                        Logout
+                    </div>
+
+                    <div class="function-desc">
+                        Logout current account.
+                    </div>
+
+                    <a href="/logout">
+                        <button type="button" id="logout-button">>> Click here to logout <<</button>
+                    </a>
+                </div>
+
+                <div class="function-block">
+                    <div class="function-name">
+                        Change Password
+                    </div>
+
+                    <div class="function-desc">
+                        Set a new login password for your account.
+                    </div>
+
+                    <form action="/account/change-password" method="get" id="password-change-form">
+                        <div>
+                            <label for="new-password">New Password</label>
+                            <input type="text" name="new-password" id="new-password" required>
+                        </div>
+
+                        <button type="submit" id="password-change-button">Submit</button>
+                    </form>
+                </div>
+
+                <div class="function-block">
+                    <div class="function-name">
+                        Change E-mail
+                    </div>
+
+                    <div class="function-desc">
+                        Change the E-mail address associated with your account.
+                    </div>
+
+                    <form action="/account/change-email" method="get" id="email-change-form">
+                        <div>
+                            <label for="new-email">New Email Address</label>
+                            <input type="text" name="new-email" id="new-email" required>
+                        </div>
+
+                        <button type="submit" id="email-change-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+    <script>
+        /* init */
+        $(document).ready(function() {
+
+        });
+    </script>
+</html>
