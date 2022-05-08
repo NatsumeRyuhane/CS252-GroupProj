@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{{ topic_title }} - MGAF</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/post_detail.css">
+    </head>
+
+    <body>
+        <script src="../static/js/jQuery-3.6.0.js"></script>
+
+        <div class="banner-pic">
+            <div class="topic-title">{{ topic_title }}</div>
+        </div>
+
+        <div class="post-area">
+            <div class="topic-post">
+                <div class="post-header">
+                    <p class="post-author"><u>{{ topic_author }}</u></p>
+                    <p>@</p>
+                    <p class="post-creation-time">{{ topic_create_time }}</p>
+                </div>
+
+                <div class="post-contents">
+                    <div class="post-text-content">{{ topic_text }}</div>
+                    <div class="post-reply-count">/</div>
+                </div>
+
+                <div class="post-footer"></div>
+            </div>
+
+            <div class="reply-divisor">Replies</div>
+
+            <div class="reply-container">
+                {{ topic_replies|safe }}
+            </div>
+        </div>
+    </body>
+
+    <script>
+        /* init */
+        $(document).ready(function() {
+
+        });
+    </script>
+</html>

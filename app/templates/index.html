@@ -17,11 +17,10 @@
         <div id="body-region">
             <div id="side-nav-bar">
                 <div id="side-nav">
-                    <div>Latest Posts</div>
+                    <div onclick="window.location.href='/index'">Latest Posts</div>
                     <div>Offers Overview</div> <!-- TODO -->
                     <div>Notifications</div> <!-- TODO -->
-                    <div onclick="window.location.href='/account'">Account Management</script>
-                    </div>
+                    <div onclick="window.location.href='/account'">Account Management</div>
                 </div>
 
                 <div id="login-display">
@@ -39,7 +38,7 @@
                     $(document).ready(function() {
                         $.ajax({
                             type : "GET",
-                            url : "/get-post/1",
+                            url : "/api/get-topic-post/1",
                             success : function (html) {
                                 $("#content-main").append(html);
                             }

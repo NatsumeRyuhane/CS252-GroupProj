@@ -8,8 +8,17 @@ VALUE
     ('Carl', '1234', 'carl@mgaf.com', now(), uuid())
 ;
 
-INSERT INTO posts (post_content, post_date, post_by, post_likes)
+INSERT INTO posts (post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
 VALUE
-    ('{"title": "Test Post", "body": "This is a test post."}', now(), 3, 0),
-    ('{"title": "Test Post", "body": "This is another test post."}', now(), 2, 0)
+    (0, '{"title": "Test Post", "body": "This is a test post."}', now(), now(), 3, 0),
+    (0, '{"title": "Test Post", "body": "This is another test post."}', now(), now(), 2, 0)
+;
+
+INSERT INTO posts (post_topic_id, post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
+VALUE
+    (1, 1, '{"title": null, "body": "This is a test reply test post."}', now(), NULL, 2, 0),
+    (1, 2, '{"title": null, "body": "This is another test reply test post."}', now(), NULL, 3, 0),
+    (1, 3, '{"title": null, "body": "Seriously why there are so many tests?"}', now(), NULL, 1, 0),
+    (1, 4, '{"title": null, "body": "Okay I think it is time to stop now."}', now(), NULL, 1, 0),
+    (1, 5, '{"title": null, "body": "IT\'S TIME TO STOP."}', now(), NULL, 1, 0)
 ;
