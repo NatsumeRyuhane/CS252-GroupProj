@@ -35,12 +35,63 @@
                 {{ topic_replies|safe }}
             </div>
         </div>
+
+        {% if uid %}
+        <div id="btn-new-post">
+            <p id="btn-new-post-icon">+</p>
+            <p id="btn-new-post-text">Add Reply</p>
+
+            <script>
+                $(document).ready(function(){
+                    $("#btn-new-post").click(function(){
+                        window.activeSubWindow = $("#mask-grayout-fullpage");
+                        activeSubWindow.fadeToggle(500);
+                        $("#post-creation-menu").fadeToggle(500);
+                    });
+                });
+            </script>
+        </div>
+        {% endif %}
+
+        <div id="mask-grayout-fullpage">
+            <script>
+                $(document).ready(function(){
+                    $("#mask-grayout-fullpage").click(function(){
+                        window.activeSubWindow.fadeToggle(500);
+                        $("#post-creation-menu").fadeToggle(500);
+                        window.activeSubWindow = null;
+                    });
+                });
+            </script>
+        </div>
+
+        <div id="post-creation-menu">
+            <form action="/api/create-reply" method="get" id="post-creation-form">
+                <div id="post-creation-title">
+                    <div id="post-title">Reply to {{ topic_title }}</div>
+                </div>
+
+                <input type="hidden" name="topic-id" value="{{ topic_id }}">
+
+                <div id="post-creation-body">
+                    <textarea type="text" name="post-body" id="post-body" placeholder="What you wanna say?" required></textarea>
+                </div>
+
+                <div class="post-menu-buttons">
+                    <div id="post-add-file">Add Image</div>
+                    <button type="submit" id="post-send">Send</button>
+                </div>
+            </form>
+        </div>
     </body>
 
     <script>
         /* init */
         $(document).ready(function() {
+            $("#mask-grayout-fullpage").toggle();
+            $("#post-creation-menu").toggle();
 
+            window.activeSubWindow = null;
         });
     </script>
 </html>

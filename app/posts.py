@@ -21,13 +21,15 @@ def add_topic_post(content: str, author_UID: int, db: pymysql.connections.Connec
 
 def add_post_reply(content: str, author_UID: int, topic_ID: int, db: pymysql.connections.Connection):
     cursor = db.cursor()
+    repl_id = get_post_reply_count(topic_ID, db)
+
     if author_UID is None:
         raise excp.InvalidUIDException
 
     res = cursor.execute(
         f"""
-        INSERT INTO MGAF.posts(post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
-        VALUES (0, '{content}', now(), now(), {author_UID}, 0);
+        INSERT INTO MGAF.posts(post_topic_id, post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
+        VALUES ({topic_ID}, {repl_id}, '{content}', now(), NULL, {author_UID}, 0);
         """)
 
     if res == 1:

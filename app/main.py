@@ -114,12 +114,13 @@ def topic_post_page(post_topic_id):
         replies = posts.get_topic_replies(post_id, db_conn)
         if replies is not None:
             render_result = ""
+            counter = 0
 
             for i in range(0, len(replies)):
                 author = user.User(replies[i][5], db_conn).get_username()
                 time = replies[i][3]
-                content = json.loads(replies[i][2])['body']
-                counter = int(replies[i][1])
+                content = json.loads(replies[i][2].replace("\r\n", "\\r\\n"))['body']
+                counter += 1
                 rendering = template.render(post_author = author, post_create_time = time, post_text = content, post_reply_counter = counter)
                 render_result += rendering
 
@@ -135,10 +136,12 @@ def topic_post_page(post_topic_id):
         auth_user_uid = user.get_uid_by_sid(sid, db_conn)
         if auth_user_uid:
             return flask.render_template("post_detail.html", topic_title = topic_title, topic_author = topic_author,
-                                         topic_create_time = topic_create_time, topic_text = topic_post_content)
+                                         topic_create_time = topic_create_time, topic_text = topic_post_content, topic_replies=get_post_reply(post_topic_id),
+                                         topic_id = post_topic_id, uid = auth_user_uid)
 
     return flask.render_template("post_detail.html", topic_title=topic_title, topic_author=topic_author,
-                                 topic_create_time=topic_create_time, topic_text=topic_post_content, topic_replies=get_post_reply(post_topic_id))
+                                 topic_create_time=topic_create_time, topic_text=topic_post_content, topic_replies=get_post_reply(post_topic_id),
+                                 topic_id = post_topic_id)
 
 
 @app.route('/logout')
@@ -158,6 +161,16 @@ def create_post():
 
     posts.add_topic_post(post_content, user.get_uid_by_sid(sid, db_conn), db_conn)
     return flask.redirect(location=f"/index?sessionid={sid}", code=302)
+
+@app.route('/api/create-reply')
+def create_reply():
+    topic_id = int(flask.request.args.get("topic-id"))
+    body = flask.request.args.get("post-body")
+    post_content = json.dumps({"title": "null", "body": body})
+    uid = user.get_uid_by_sid(flask.request.cookies.get("session-id"), db_conn)
+
+    posts.add_post_reply(post_content, uid, topic_id, db_conn)
+    return flask.redirect(location=f"/posts/{topic_id}", code=302)
 
 
 @app.route('/api/get-topic-post/<page>')
