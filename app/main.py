@@ -88,6 +88,10 @@ def user_page():
 @app.route('/posts/<post_topic_id>')
 def topic_post_page(post_topic_id):
     sid = flask.request.cookies.get("session-id")
+    auth_user_uid = None
+    if sid is not None:
+        auth_user_uid = user.get_uid_by_sid(sid, db_conn)
+
     topic_post = posts.get_topic_post(int(post_topic_id), db_conn)
     topic_create_time = topic_post[3]
     topic_title = json.loads(topic_post[2])['title']
@@ -105,8 +109,12 @@ def topic_post_page(post_topic_id):
             </div>
     
             <div class="post-contents">
-                <div class="post-text-content">{{ post_text }}</div>
+                <div class="post-text-content" id="reply-{{ post_reply_counter }}">{{ post_text }}</div>
+                {% if editable %}
+                <div class="post-reply-count-editable" onclick="loadPageEditMenu({{ post_reply_counter }})">{{ post_reply_counter }}</div>
+                {% else %}
                 <div class="post-reply-count">{{ post_reply_counter }}</div>
+                {% endif %}
             </div>
         </div>
         """)
@@ -121,7 +129,10 @@ def topic_post_page(post_topic_id):
                 time = replies[i][3]
                 content = json.loads(replies[i][2].replace("\r\n", "\\r\\n"))['body']
                 counter += 1
-                rendering = template.render(post_author = author, post_create_time = time, post_text = content, post_reply_counter = counter)
+
+                editable = False
+                if auth_user_uid == replies[i][5]: editable = True
+                rendering = template.render(post_author=author, post_create_time=time, post_text=content, post_reply_counter=counter, editable = editable)
                 render_result += rendering
 
             return render_result
@@ -129,20 +140,9 @@ def topic_post_page(post_topic_id):
             return None
 
 
-
-    if sid is None:
-        pass
-    else:
-        auth_user_uid = user.get_uid_by_sid(sid, db_conn)
-        if auth_user_uid:
-            return flask.render_template("post_detail.html", topic_title = topic_title, topic_author = topic_author,
-                                         topic_create_time = topic_create_time, topic_text = topic_post_content, topic_replies=get_post_reply(post_topic_id),
-                                         topic_id = post_topic_id, uid = auth_user_uid)
-
     return flask.render_template("post_detail.html", topic_title=topic_title, topic_author=topic_author,
                                  topic_create_time=topic_create_time, topic_text=topic_post_content, topic_replies=get_post_reply(post_topic_id),
-                                 topic_id = post_topic_id)
-
+                                 topic_id=post_topic_id, uid=auth_user_uid)
 
 @app.route('/logout')
 def logout():
@@ -162,6 +162,7 @@ def create_post():
     posts.add_topic_post(post_content, user.get_uid_by_sid(sid, db_conn), db_conn)
     return flask.redirect(location=f"/index?sessionid={sid}", code=302)
 
+
 @app.route('/api/create-reply')
 def create_reply():
     topic_id = int(flask.request.args.get("topic-id"))
@@ -172,6 +173,14 @@ def create_reply():
     posts.add_post_reply(post_content, uid, topic_id, db_conn)
     return flask.redirect(location=f"/posts/{topic_id}", code=302)
 
+@app.route('/api/post-edit')
+def edit_post():
+    topic_id = int(flask.request.args.get("edit-topic-id"))
+    reply_id = int(flask.request.args.get("edit-reply-id"))
+    post_content = json.dumps({"title": "null", "body": flask.request.args.get("post-edit-body")})
+
+    posts.edit_post(topic_id, reply_id, post_content, db_conn)
+    return flask.redirect(location=f"/posts/{topic_id}", code=302)
 
 @app.route('/api/get-topic-post/<page>')
 def get_topic_post(page):

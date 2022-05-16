@@ -113,3 +113,18 @@ def get_latest_posts(count: int, db: pymysql.connections.Connection):
         return None
     else:
         return result
+
+def edit_post(post_id: int, reply_id: int, content, db: pymysql.connections.Connection):
+    cursor = db.cursor()
+
+    res = cursor.execute(
+        f"""
+        UPDATE MGAF.posts
+        SET post_content='{content}'
+        WHERE post_topic_id={post_id} AND post_reply_id={reply_id}
+        """)
+
+    if res == 1:
+        pass
+    else:
+        raise excp.DatabaseOperationErrorException
