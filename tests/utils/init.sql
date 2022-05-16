@@ -23,3 +23,7 @@ CREATE TABLE posts (
 ) ENGINE=INNODB;
 
 ALTER TABLE posts ADD FOREIGN KEY(post_by) REFERENCES users(user_id) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+INSERT INTO users (user_id, user_name, user_password, user_email, user_register_date, user_session_id)
+VALUE
+    (1, 'Admin', '1234', 'admin@mgaf.com', now(), uuid())

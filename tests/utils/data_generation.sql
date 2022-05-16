@@ -1,20 +1,19 @@
 USE `MGAF`;
 
-INSERT INTO users (user_name, user_password, user_email, user_register_date, user_session_id)
+INSERT INTO MGAF.users (user_name, user_password, user_email, user_register_date, user_session_id)
 VALUE
-    ('Admin', '1234', 'admin@mgaf.com', now(), uuid()),
     ('Alice', '1234', 'alice@mgaf.com', now(), uuid()),
     ('Bob', '1234', 'bob@mgaf.com', now(), uuid()),
     ('Carl', '1234', 'carl@mgaf.com', now(), uuid())
 ;
 
-INSERT INTO posts (post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
+INSERT INTO MGAF.posts (post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
 VALUE
     (0, '{"title": "Test Post", "body": "This is a test post."}', now(), now(), 3, 0),
     (0, '{"title": "Test Post", "body": "This is another test post."}', now(), now(), 2, 0)
 ;
 
-INSERT INTO posts (post_topic_id, post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
+INSERT INTO MGAF.posts (post_topic_id, post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
 VALUE
     (1, 1, '{"title": null, "body": "This is a test reply test post."}', now(), NULL, 2, 0),
     (1, 2, '{"title": null, "body": "This is another test reply test post."}', now(), NULL, 3, 0),
