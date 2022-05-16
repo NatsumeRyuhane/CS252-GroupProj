@@ -131,7 +131,7 @@ def topic_post_page(post_topic_id):
                 counter += 1
 
                 editable = False
-                if auth_user_uid == replies[i][5]: editable = True
+                if auth_user_uid == replies[i][5] or auth_user_uid == 1: editable = True
                 rendering = template.render(post_author=author, post_create_time=time, post_text=content, post_reply_counter=counter, editable = editable)
                 render_result += rendering
 
