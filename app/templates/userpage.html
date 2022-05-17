@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>User Page of {{ username }}</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/function-page.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/userpage.css">
+    </head>
+
+    <body>
+        <script src="../static/js/jQuery-3.6.0.js"></script>
+
+        <div class="banner-pic"></div>
+
+        <div class="function-pane">
+            <div id="prompt">
+                <p id="username-prompt" class="">{{ username }}</p>
+                <p>'s Personal Page</p>
+            </div>
+
+            <div class="nav">
+                <p onclick="window.location.href='/index'"><< Back to Index Page</p>
+            </div>
+
+            <div id="function-area">
+                <div class="function-block">
+                    <div class="function-name-warpper">
+                        <div class="function-name">
+                            Motto
+                        </div>
+
+                        {% if editable %}
+                        <button type="button" id="edit-motto">
+                            Edit
+
+                            <script>
+                                $(document).ready(function() {
+                                    $("#edit-motto").on("click", function () {
+                                        $("#user-motto").hide();
+                                        $("#form-change-motto").show();
+                                    });
+                                });
+                            </script>
+                        </button>
+                        {% endif %}
+                    </div>
+
+                    {% if user_motto %}
+                    <p id="user-motto">"{{ user_motto }}"</p>
+                    {% else %}
+                    <p id="user-motto" class="placeholder">N/A</p>
+                    {% endif %}
+
+                    <form action="/api/user-info/motto" method="get" style="display: none" id="form-change-motto">
+                        <input type="hidden" name="motto-uid" value="{{ user_id }}">
+                        <input type="text" name="new-motto" id="new-motto" placeholder="Editing..." required>
+                        <button type="submit" id="edit-motto-save">Save Changes</button>
+                    </form>
+                </div>
+
+                <div class="function-block">
+                    <div class="function-name-warpper">
+                        <div class="function-name">
+                            Personal Information
+                        </div>
+
+                        {% if editable %}
+                            <button type="button" id="edit-info">
+                                Edit
+
+                                <script>
+                                    $(document).ready(function() {
+                                        $("#edit-info").on("click", function () {
+                                            $(".user-info-warpper").hide();
+                                            $("#info-change-form").show();
+                                        });
+                                    });
+                                </script>
+                            </button>
+                        {% endif %}
+                    </div>
+
+                    <div class="user-info-warpper">
+                        <div class="infoblock">
+                            <p class="info-heading">Major</p>
+                            {% if user_major %}
+                            <p>{{ user_major }}</p>
+                            {% else %}
+                            <p class="placeholder">Not Set</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="infoblock">
+                            <p class="info-heading">Grade</p>
+                            {% if user_grade %}
+                            <p>{{ user_grade }}</p>
+                            {% else %}
+                            <p class="placeholder">Not Set</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <form action="/api/user-info/update-info" method="get" id="info-change-form" style="display: none">
+                        <div>
+                            <label for="major">Major</label>
+                            <select name="major" id="major" required>
+                                <option value="FIE">FIE</option>
+                                <option value="SoB">SoB</option>
+                                <option value="FL">FL</option>
+                                <option value="FCM">FCM</option>
+                                <option value="FHTM">FHTM</option>
+                                <option value="FHA">FHA</option>
+                                <option value="FM">FM</option>
+                                <option value="SoP">SoP</option>
+                                <option value="UIC">UIC</option>
+                                <option value="SoLA">SoLA</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="grade">Grade</label>
+                            <input type="number" name="grade" id="grade" min="2000" max="2022" required>
+                        </div>
+                        <input type="hidden" name="info-change-uid" value="{{ user_id }}">
+                        <button type="submit" id="info-change-button">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+    {% if editable %}
+    <script>
+        /* init */
+        $(document).ready(function() {
+
+        });
+    </script>
+    {% endif %}
+</html>

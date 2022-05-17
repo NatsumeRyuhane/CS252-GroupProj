@@ -113,7 +113,64 @@ def register_user(username: str, email: str, password: str, db: pymysql.connecti
         VALUE ('{username}', '{password}', '{email}', now(), uuid());
         """)
 
+    uid = get_uid_by_username(username, db)
+
+    result = cursor.execute(
+        f"""
+            INSERT INTO MGAF.user_info (user_id, user_motto, user_major, user_grade)
+            VALUE ({uid}, NULL, NULL, NULL);
+            """)
+
     if result == 1:
         return 0
     else:
         return 1
+
+
+def get_user_info(uid: int, db: pymysql.connections.Connection):
+    cursor = db.cursor()
+
+    result = cursor.execute(
+        f"""
+            SELECT *
+            FROM MGAF.user_info
+            WHERE user_id = {uid};
+            """)
+
+    result = cursor.fetchall()
+    if result == ():
+        return None
+    else:
+        return result[0]
+
+def update_user_motto(uid: int, motto: str, db: pymysql.connections.Connection):
+    cursor = db.cursor()
+
+    result = cursor.execute(
+        f"""
+                UPDATE MGAF.user_info
+                SET user_motto='{motto}'
+                WHERE user_id={uid};
+                """)
+
+    result = cursor.fetchall()
+    if result == ():
+        return None
+    else:
+        return result[0]
+
+def update_user_info(uid: int, major: str, grade: str, db: pymysql.connections.Connection):
+    cursor = db.cursor()
+
+    result = cursor.execute(
+        f"""
+                UPDATE MGAF.user_info
+                SET user_major='{major}', user_grade='{grade}'
+                WHERE user_id={uid};
+                """)
+
+    result = cursor.fetchall()
+    if result == ():
+        return None
+    else:
+        return result[0]

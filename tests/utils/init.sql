@@ -22,8 +22,23 @@ CREATE TABLE posts (
   PRIMARY KEY (post_topic_id, post_reply_id)
 ) ENGINE=INNODB;
 
+CREATE TABLE user_info (
+  user_id     INT(8) UNSIGNED NOT NULL,
+  user_motto TEXT,
+  user_major TEXT,
+  user_grade TEXT,
+  PRIMARY KEY (user_id)
+) ENGINE=INNODB;
+
+ALTER TABLE posts ADD FOREIGN KEY(post_by) REFERENCES users(user_id) ON DELETE RESTRICT ON UPDATE CASCADE;
 ALTER TABLE posts ADD FOREIGN KEY(post_by) REFERENCES users(user_id) ON DELETE RESTRICT ON UPDATE CASCADE;
 
 INSERT INTO users (user_id, user_name, user_password, user_email, user_register_date, user_session_id)
 VALUE
     (1, 'Admin', '1234', 'admin@mgaf.com', now(), uuid())
+;
+
+INSERT INTO user_info (user_id, user_motto, user_major, user_grade)
+VALUE
+    (1, NULL, NULL, NULL)
+;

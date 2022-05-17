@@ -7,6 +7,13 @@ VALUE
     ('Carl', '1234', 'carl@mgaf.com', now(), uuid())
 ;
 
+INSERT INTO MGAF.user_info (user_id, user_motto, user_major, user_grade)
+VALUE
+    (2, NULL, NULL, NULL),
+    (3, NULL, NULL, NULL),
+    (4, NULL, NULL, NULL)
+;
+
 INSERT INTO MGAF.posts (post_reply_id, post_content, post_date, post_last_update, post_by, post_likes)
 VALUE
     (0, '{"title": "Test Post", "body": "This is a test post."}', now(), now(), 3, 0),

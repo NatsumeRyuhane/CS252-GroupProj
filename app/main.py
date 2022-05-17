@@ -20,7 +20,7 @@ def index():
         auth_user_uid = user.get_uid_by_sid(sid, db_conn)
         if auth_user_uid:
             usr = user.User(auth_user_uid, db_conn)
-            return flask.render_template("index.html", sid=usr.get_session_id(), username=usr.get_username())
+            return flask.render_template("index.html", sid=usr.get_session_id(), username=usr.get_username(), uid = auth_user_uid)
         else:
             return flask.render_template("index.html")
 
@@ -81,8 +81,14 @@ def account_page():
 
 
 @app.route('/user/<uid>')
-def user_page():
-    pass
+def user_page(uid):
+    sid = flask.request.cookies.get("session-id")
+
+    page_editable = user.get_uid_by_sid(sid, db_conn) == int(uid)
+    page_user = user.User(uid, db_conn)
+    user_info = user.get_user_info(uid, db_conn)
+
+    return flask.render_template("userpage.html", user_id = uid, username = page_user.get_username(), editable = page_editable, user_motto = user_info[1], user_major = user_info[2], user_grade = user_info[3])
 
 
 @app.route('/posts/<post_topic_id>')
@@ -103,7 +109,7 @@ def topic_post_page(post_topic_id):
         template = jinja2.Template("""
         <div class="reply-post">
             <div class="post-header">
-                <p class="post-author"><u>{{ post_author }}</u></p>
+                <p class="post-author" onclick="window.location.href='/user/{{ post_author_uid }}'"><u>{{ post_author }}</u></p>
                 <p>@</p>
                 <p class="post-creation-time">{{ post_create_time }}</p>
             </div>
@@ -132,7 +138,7 @@ def topic_post_page(post_topic_id):
 
                 editable = False
                 if auth_user_uid == replies[i][5] or auth_user_uid == 1: editable = True
-                rendering = template.render(post_author=author, post_create_time=time, post_text=content, post_reply_counter=counter, editable = editable)
+                rendering = template.render(post_author=author, post_author_uid = replies[i][5], post_create_time=time, post_text=content, post_reply_counter=counter, editable = editable)
                 render_result += rendering
 
             return render_result
@@ -140,7 +146,7 @@ def topic_post_page(post_topic_id):
             return None
 
 
-    return flask.render_template("post_detail.html", topic_title=topic_title, topic_author=topic_author,
+    return flask.render_template("post_detail.html", topic_title=topic_title, topic_author=topic_author, post_author_uid = topic_post[5],
                                  topic_create_time=topic_create_time, topic_text=topic_post_content, topic_replies=get_post_reply(post_topic_id),
                                  topic_id=post_topic_id, uid=auth_user_uid)
 
@@ -191,7 +197,7 @@ def get_topic_post(page):
             <div class="post-title">{{ post_title }}</div>
             <div class="post-body">{{ post_body }}</div>
         </div>
-        <div class="post-author">{{ post_author }}</div>
+        <div class="post-author" onclick="window.location.href='/user/{{ post_author_uid }}'">{{ post_author }}</div>
     </div>\n
     """)
 
@@ -201,11 +207,30 @@ def get_topic_post(page):
         content = json.loads(raw_posts[i][0])
         author = user.User(raw_posts[i][1], db_conn).get_username()
         topic_id = int(raw_posts[i][2])
-        render_result = post_html_template.render(post_title=content['title'], post_body=content['body'], post_author=author, post_topic_id=topic_id)
+        render_result = post_html_template.render(post_title=content['title'], post_body=content['body'], post_author=author, post_topic_id=topic_id, post_author_uid = raw_posts[i][1])
         rendered_post += render_result
 
     return rendered_post
 
+@app.route('/api/user-info/<uid>')
+def get_user_info(uid):
+    result = user.get_user_info(uid, db_conn)
+    # TODO
+
+@app.route('/api/user-info/motto')
+def change_motto():
+    motto_change_uid = int(flask.request.args.get("motto-uid"))
+    new_motto = flask.request.args.get("new-motto")
+    user.update_user_motto(motto_change_uid, new_motto, db_conn)
+    return flask.redirect(location=f"/user/{motto_change_uid}", code=302)
+
+@app.route('/api/user-info/update-info/')
+def change_info():
+    info_change_uid = int(flask.request.args.get("info-change-uid"))
+    update_major = flask.request.args.get("major")
+    update_grade = flask.request.args.get("grade")
+    user.update_user_info(info_change_uid, update_major, update_grade, db=db_conn)
+    return flask.redirect(location=f"/user/{info_change_uid}", code=302)
 
 @app.route('/api/upload')
 def file_upload():
