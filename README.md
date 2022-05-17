@@ -2,7 +2,47 @@
 
 ## About
 
-[Project description WIP]
+This project, or infered internally as MGAF, is a course project of MUST CS252, semester 2202. 
+
+This project is a forum framework that is used to implement a forum for students of MUST to share and exchange information regards their graduate application.
+
+For more course related information, please refer to materials under `./documentation`.
+
+**Important Note**
+
+The security of the backend code was never considered during the development. This project should NOT be deployed on a public server under all circumstances.
+
+## Requirements & Dependencies
+
+* `MySQL 8.0.23`
+* `Python 3.7`
+  * Packages:
+    * `Flask`
+    * `PyMySQL`
+    * `Jinja2`
+* A modern desktop browser
+* local port `8080`
+
+This project also uses `jQuery`, bundled with source code under `./app/static/js/`
+
+**Note:**
+
+The bundled `venv` in the repository should contain all dependencies that this project requires.
+
+This project was tested on macOS Monterey beta 12.4 on a M1 chip mac.
+
+The browser used for testing was Firefox, version `101.0b7`.
+
+## Usage
+
+If this is the first time you run this project:
+1. run `./tests/utils/init.sql` on your sql server.
+2. [ optional ] run `./tests/utils/data_generation.sql` on your sql server to generate some placeholder data.
+3. configure the connect parameters in `./app/init.py, lineno 7`
+
+Then run `main.py`.
+
+After a successful startup, visit `127.0.0.1:8080` or your IP address on your LAN from your browser.
 
 ## Commit Style Guidelines
 

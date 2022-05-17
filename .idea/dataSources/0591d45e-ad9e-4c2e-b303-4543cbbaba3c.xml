@@ -938,23 +938,23 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="273" parent="1" name="utf8mb4_zh_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="274" parent="1" name="MGAF">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="275" parent="1" name="assignment_3_db">
+    <schema id="274" parent="1" name="assignment_3_db">
       <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="276" parent="1" name="information_schema">
+    <schema id="275" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="277" parent="1" name="mysql">
+    <schema id="276" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="278" parent="1" name="performance_schema">
+    <schema id="277" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="279" parent="1" name="sys">
+    <schema id="278" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="279" parent="1" name="MGAF">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="280" parent="1" name="mysql.infoschema">
@@ -976,227 +976,227 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="284" parent="274" name="posts">
+    <table id="284" parent="274" name="course">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="285" parent="274" name="user_info">
+    <table id="285" parent="274" name="grade">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="286" parent="274" name="users">
+    <table id="286" parent="274" name="student">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="287" parent="275" name="course">
+    <table id="287" parent="279" name="posts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="288" parent="275" name="grade">
+    <table id="288" parent="279" name="user_info">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="289" parent="275" name="student">
+    <table id="289" parent="279" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="290" parent="284" name="post_topic_id">
-      <AutoIncrement>1</AutoIncrement>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="291" parent="284" name="post_reply_id">
-      <DataType>int unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="292" parent="284" name="post_content">
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="293" parent="284" name="post_date">
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="294" parent="284" name="post_last_update">
-      <DataType>datetime|0s</DataType>
-      <Position>5</Position>
-    </column>
-    <column id="295" parent="284" name="post_by">
-      <DataType>int unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="296" parent="284" name="post_likes">
-      <DataType>int unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-    </column>
-    <foreign-key id="297" parent="284" name="posts_ibfk_1">
-      <ColNames>post_by</ColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <RefColNames>user_id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <foreign-key id="298" parent="284" name="posts_ibfk_2">
-      <ColNames>post_by</ColNames>
-      <OnUpdate>cascade</OnUpdate>
-      <RefColNames>user_id</RefColNames>
-      <RefTableName>users</RefTableName>
-    </foreign-key>
-    <index id="299" parent="284" name="post_by">
-      <ColNames>post_by</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="300" parent="284" name="PRIMARY">
-      <ColNames>post_topic_id
-post_reply_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="301" parent="285" name="user_id">
-      <DataType>int unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="302" parent="285" name="user_motto">
-      <DataType>text|0s</DataType>
-      <Position>2</Position>
-    </column>
-    <column id="303" parent="285" name="user_major">
-      <DataType>text|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <column id="304" parent="285" name="user_grade">
-      <DataType>text|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <key id="305" parent="285" name="PRIMARY">
-      <ColNames>user_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <column id="306" parent="286" name="user_id">
-      <AutoIncrement>2</AutoIncrement>
-      <DataType>int unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="307" parent="286" name="user_name">
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="308" parent="286" name="user_password">
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="309" parent="286" name="user_email">
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="310" parent="286" name="user_register_date">
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="311" parent="286" name="user_session_id">
-      <DataType>char(36)|0s</DataType>
-      <Position>6</Position>
-    </column>
-    <index id="312" parent="286" name="user_name">
-      <ColNames>user_name</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="313" parent="286" name="user_email">
-      <ColNames>user_email</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="314" parent="286" name="PRIMARY">
-      <ColNames>user_id</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-    </key>
-    <key id="315" parent="286" name="user_name">
-      <ColNames>user_name</ColNames>
-      <UnderlyingIndexName>user_name</UnderlyingIndexName>
-    </key>
-    <key id="316" parent="286" name="user_email">
-      <ColNames>user_email</ColNames>
-      <UnderlyingIndexName>user_email</UnderlyingIndexName>
-    </key>
-    <column id="317" parent="287" name="course_id">
+    <column id="290" parent="284" name="course_id">
       <AutoIncrement>4</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="318" parent="287" name="course_name">
+    <column id="291" parent="284" name="course_name">
       <DataType>char(100)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="319" parent="287" name="PRIMARY">
+    <key id="292" parent="284" name="PRIMARY">
       <ColNames>course_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="320" parent="288" name="student_id">
+    <column id="293" parent="285" name="student_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="321" parent="288" name="course_id">
+    <column id="294" parent="285" name="course_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="322" parent="288" name="score">
+    <column id="295" parent="285" name="score">
       <DataType>smallint|0s</DataType>
       <Position>3</Position>
     </column>
-    <foreign-key id="323" parent="288" name="grade_ibfk_1">
+    <foreign-key id="296" parent="285" name="grade_ibfk_1">
       <ColNames>student_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>student_id</RefColNames>
       <RefTableName>student</RefTableName>
     </foreign-key>
-    <foreign-key id="324" parent="288" name="grade_ibfk_2">
+    <foreign-key id="297" parent="285" name="grade_ibfk_2">
       <ColNames>course_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>course_id</RefColNames>
       <RefTableName>course</RefTableName>
     </foreign-key>
-    <index id="325" parent="288" name="course_id">
+    <index id="298" parent="285" name="course_id">
       <ColNames>course_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="326" parent="288" name="PRIMARY">
+    <key id="299" parent="285" name="PRIMARY">
       <ColNames>student_id
 course_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="327" parent="289" name="student_id">
+    <column id="300" parent="286" name="student_id">
       <AutoIncrement>33</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="328" parent="289" name="student_name">
+    <column id="301" parent="286" name="student_name">
       <DataType>char(10)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="329" parent="289" name="PRIMARY">
+    <key id="302" parent="286" name="PRIMARY">
       <ColNames>student_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+    </key>
+    <column id="303" parent="287" name="post_topic_id">
+      <AutoIncrement>1</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="304" parent="287" name="post_reply_id">
+      <DataType>int unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="305" parent="287" name="post_content">
+      <DataType>text|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="306" parent="287" name="post_date">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="307" parent="287" name="post_last_update">
+      <DataType>datetime|0s</DataType>
+      <Position>5</Position>
+    </column>
+    <column id="308" parent="287" name="post_by">
+      <DataType>int unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="309" parent="287" name="post_likes">
+      <DataType>int unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <foreign-key id="310" parent="287" name="posts_ibfk_1">
+      <ColNames>post_by</ColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <foreign-key id="311" parent="287" name="posts_ibfk_2">
+      <ColNames>post_by</ColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <RefColNames>user_id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="312" parent="287" name="post_by">
+      <ColNames>post_by</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="313" parent="287" name="PRIMARY">
+      <ColNames>post_topic_id
+post_reply_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="314" parent="288" name="user_id">
+      <DataType>int unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="315" parent="288" name="user_motto">
+      <DataType>text|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="316" parent="288" name="user_major">
+      <DataType>text|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="317" parent="288" name="user_grade">
+      <DataType>text|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <key id="318" parent="288" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="319" parent="289" name="user_id">
+      <AutoIncrement>2</AutoIncrement>
+      <DataType>int unsigned|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="320" parent="289" name="user_name">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="321" parent="289" name="user_password">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="322" parent="289" name="user_email">
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="323" parent="289" name="user_register_date">
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="324" parent="289" name="user_session_id">
+      <DataType>char(36)|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <index id="325" parent="289" name="user_name">
+      <ColNames>user_name</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="326" parent="289" name="user_email">
+      <ColNames>user_email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="327" parent="289" name="PRIMARY">
+      <ColNames>user_id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <key id="328" parent="289" name="user_name">
+      <ColNames>user_name</ColNames>
+      <UnderlyingIndexName>user_name</UnderlyingIndexName>
+    </key>
+    <key id="329" parent="289" name="user_email">
+      <ColNames>user_email</ColNames>
+      <UnderlyingIndexName>user_email</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
