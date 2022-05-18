@@ -17,16 +17,15 @@
         <div id="body-region">
             <div id="side-nav-bar">
                 <div id="side-nav">
-                    <div>Latest Posts</div>
+                    <div onclick="window.location.href='/index'">Latest Posts</div>
                     <div>Offers Overview</div> <!-- TODO -->
                     <div>Notifications</div> <!-- TODO -->
-                    <div onclick="window.location.href='/account'">Account Management</script>
-                    </div>
+                    <div onclick="window.location.href='/account'">Account Management</div>
                 </div>
 
                 <div id="login-display">
                     {% if username %}
-                        <p>Logged in as <strong><u>{{ username }}</u></strong></p>
+                        <p>Logged in as <strong onclick="window.location.href='/user/{{ uid }}'"><u>{{ username }}</u></strong></p>
                     {% else %}
                         <a href="/login" id="login-btn"><u>Login</u></a>
                     {% endif %}
@@ -39,7 +38,7 @@
                     $(document).ready(function() {
                         $.ajax({
                             type : "GET",
-                            url : "/get-post/1",
+                            url : "/api/get-topic-post/1",
                             success : function (html) {
                                 $("#content-main").append(html);
                             }
@@ -81,7 +80,7 @@
         <!-- TODO: Add post tags -->
         <!-- TODO: Add file upload support -->
         <div id="post-creation-menu">
-            <form action="/create-post" method="get" id="post-creation-form">
+            <form action="/api/create-post" method="get" id="post-creation-form">
                 <div id="post-creation-title">
                     <input type="text" name="post-title" id="post-title" placeholder="Post Title" required>
                 </div>

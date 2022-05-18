@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>{{ topic_title }} - MGAF</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/post_detail.css">
+    </head>
+
+    <body>
+        <script src="../static/js/jQuery-3.6.0.js"></script>
+
+        <div class="banner-pic">
+            <div class="topic-title">{{ topic_title }}</div>
+        </div>
+
+        <div class="post-area">
+            <div class="topic-post">
+                <div class="post-header">
+                    <p class="post-author" onclick="window.location.href='/user/{{ post_author_uid }}'"><u>{{ topic_author }}</u></p>
+                    <p>@</p>
+                    <p class="post-creation-time">{{ topic_create_time }}</p>
+                </div>
+
+                <div class="post-contents">
+                    <div class="post-text-content">{{ topic_text }}</div>
+                    <div class="post-reply-count">/</div>
+                </div>
+
+                <div class="post-footer"></div>
+            </div>
+
+            <div class="reply-divisor">Replies</div>
+
+            <div class="reply-container">
+                {{ topic_replies|safe }}
+            </div>
+        </div>
+
+        {% if uid %}
+        <div id="btn-new-post">
+            <p id="btn-new-post-icon">+</p>
+            <p id="btn-new-post-text">Add Reply</p>
+
+            <script>
+                $(document).ready(function(){
+                    $("#btn-new-post").click(function(){
+                        window.activeSubWindow = $("#post-creation-menu");
+                        activeSubWindow.fadeToggle(500);
+                        $("#mask-grayout-fullpage").fadeToggle(500);
+                    });
+                });
+            </script>
+        </div>
+        {% endif %}
+
+        <div id="mask-grayout-fullpage">
+            <script>
+                $(document).ready(function(){
+                    $("#mask-grayout-fullpage").click(function(){
+                        $("#mask-grayout-fullpage").fadeToggle(500);
+                        window.activeSubWindow.fadeToggle(500);
+                        window.activeSubWindow = null;
+                    });
+                });
+            </script>
+        </div>
+
+        <div id="post-creation-menu">
+            <form action="/api/create-reply" method="get" id="post-creation-form">
+                <div id="post-creation-title">
+                    <div id="post-title">Reply to {{ topic_title }}</div>
+                </div>
+
+                <input type="hidden" name="topic-id" value="{{ topic_id }}">
+
+                <div id="post-creation-body">
+                    <textarea type="text" name="post-body" id="post-body" placeholder="What you wanna say?" required></textarea>
+                </div>
+
+                <div class="post-menu-buttons">
+                    <div id="post-add-file">Add Image</div>
+                    <button type="submit" id="post-send">Send</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="post-edit-menu">
+            <form action="/api/post-edit" method="get" id="post-edit-form">
+                <div id="post-edit-title">
+                    <div id="post-edit-topic">Editing reply...</div>
+                </div>
+
+                <input type="hidden" name="edit-topic-id" value="{{ topic_id }}">
+                <input type="hidden" name="edit-reply-id" id="edit-reply-id" value="-1">
+
+                <div id="post-edit-area">
+                    <textarea type="text" name="post-edit-body" id="post-edit-body" required></textarea>
+                </div>
+
+                <div class="post-menu-buttons">
+                    <div id="post-edit-add-file">Add Image</div>
+                    <button type="submit" id="post-edit-send">Save</button>
+                </div>
+            </form>
+        </div>
+    </body>
+
+    <script>
+        /* init */
+        $(document).ready(function() {
+            $("#mask-grayout-fullpage").toggle();
+            $("#post-creation-menu").toggle();
+            $("#post-edit-menu").toggle();
+
+            function loadPageEditMenu(replyID)
+            {
+                $("#edit-reply-id").val(replyID);
+                reply_content_selector = "#reply-" + replyID
+                $("#post-edit-body").val($(reply_content_selector).text())
+
+                window.activeSubWindow = $("#post-edit-menu");
+                activeSubWindow.fadeToggle(500);
+                $("#mask-grayout-fullpage").fadeToggle(500);
+            }
+
+            window.loadPageEditMenu = loadPageEditMenu
+            window.activeSubWindow = null;
+        });
+    </script>
+</html>
